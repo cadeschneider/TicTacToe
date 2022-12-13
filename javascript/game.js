@@ -78,7 +78,7 @@ const gameBoard = (() => {
 
     const checkColumns = (board) => {
         for (let i = 0; i < 3 ; i++){
-            if ((board[i] == board[i+3]) && (board[i] == board[i+6])&& board[i] != 'undefined'){
+            if ((board[i] == board[i+3]) && (board[i] == board[i+6])&& board[i] != null){
                 return true
             }
         }
@@ -87,7 +87,7 @@ const gameBoard = (() => {
 
     const checkRows = (board) => {
         for (let i = 0; i< 7; i=i+3){
-            if ((board[i] == board[i+1]) && (board[i] == board[i+2] )&& board[i] != 'undefined'){
+            if ((board[i] == board[i+1]) && (board[i] == board[i+2] )&& board[i] != null){
                 return true
             }
         }
@@ -95,7 +95,7 @@ const gameBoard = (() => {
     }
 
     const checkDiagnal = (board) => {
-        if (((board[0] === board[4] === board[8]) || (board[2] === board[4] === board[6])) && board[4] != 'undefined'){
+        if (((board[0] === board[4] === board[8]) || (board[2] === board[4] === board[6])) && board[4] != null){
             return true
         }
         return false
