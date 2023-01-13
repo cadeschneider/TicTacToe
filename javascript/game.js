@@ -49,21 +49,20 @@ const gameBoard = (() => {
 
     const computerSelections = shuffleIndices(Array.from(Array(9).keys()));
 
-
     const htmlBoard = document.querySelectorAll('.position');
     htmlBoard.forEach(element => element.addEventListener('click', function(event) {
 
         let playerChoice = event.target.getAttribute('data-index');
         displayController.add(playerChoice,displayController.getPlayer.getSign);
 
-        if (!hasWon(board)){
-            console.log(board)
+        if (hasWon(board)){
+            console.log("X Wins")
         }
 
         displayController.add(computerChoice(board),displayController.getComputer.getSign);
 
         if (hasWon(board)){
-            console.log("winner")
+            console.log("O Wins")
         }
 
     }))
